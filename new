@@ -35,7 +35,7 @@ while True:
         search_book(user_bookname, user_aut_name, book_id)
 
     elif num == '3':
-        print(" Exiting program. Goodbye!")
+        print(" Exiting program.")
         break
 
     else:
