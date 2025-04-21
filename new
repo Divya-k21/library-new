@@ -1,0 +1,42 @@
+book_list = []
+
+def addbook(bookname, autname, bookid):
+    book = {"name": bookname, "author": autname, "id": bookid}
+    book_list.append(book)
+    print(" Book added:", book)
+    print(" Current books:", book_list)
+
+def search_book(user_bookname, user_aut_name, book_id):
+    found = False
+    for b in book_list:
+        if (b['name'] == user_bookname and
+            b['author'] == user_aut_name and
+            b['id'] == book_id):
+            print(" Book found:", b)
+            found = True
+            break
+    if not found:
+        print(" Book not found.")
+
+
+while True:
+    num = input("\nChoose an option:\n1. Add book\n2. Search book\n3. Exit\nYour choice: ")
+    
+    if num == '1':
+        bookname = input("Enter a book name: ")
+        autname = input("Enter author name: ")
+        bookid = input("Enter book ID: ")
+        addbook(bookname, autname, bookid)
+
+    elif num == '2':
+        user_bookname = input("Enter the book name to search: ")
+        user_aut_name = input("Enter the author name: ")
+        book_id = input("Enter book ID: ")
+        search_book(user_bookname, user_aut_name, book_id)
+
+    elif num == '3':
+        print(" Exiting program. Goodbye!")
+        break
+
+    else:
+        print(" Invalid.")
